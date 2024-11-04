@@ -1,0 +1,269 @@
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+@use "./partials/keyframes" as *;
+
+/* hero */
+.main {
+  margin-top: 0;
+}
+.hero {
+  @include flex-center;
+  background-color: $secondary-color;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 3rem;
+
+  &__content {
+    width: 40%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  &__title {
+    @include heading-style(3.75rem);
+    margin: 0;
+  }
+  &__intro {
+    font-size: 1.13rem;
+  }
+  &__button-wrapper {
+    position: relative;
+  }
+  &__button-border {
+    @include button-border;
+  }
+  &__button-link {
+    text-decoration: none;
+    position: relative;
+  }
+  &__button {
+    margin-top: 2rem;
+    @include button-style;
+  }
+  &__image {
+    text-align: end;
+    width: 40%;
+    padding: 0;
+  }
+  &__image-details {
+    width: 60%;
+  }
+}
+/* product cards */
+.product {
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 60rem;
+
+  &__title {
+    @include heading-style(3.75rem);
+    text-align: center;
+    margin: 0;
+  }
+  &-cards {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25%;
+    border-radius: 10px;
+    box-shadow: 0 5px 9px -1px rgba(0, 0, 0, 0.25);
+    background-color: $secondary-font-color;
+    height: 27rem;
+  }
+  &-card__image-container {
+    text-align: center;
+  }
+  &-card__image {
+    height: 17.5rem;
+    padding: 1rem;
+  }
+  &__content-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30%;
+    background-color: $secondary-color;
+    border-radius: inherit;
+  }
+  &-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &-card__item {
+    @include heading-style(2.063rem);
+    margin: 0;
+  }
+  &-amount {
+    font-size: 1.125rem;
+    color: $alternate-color;
+    margin: 0;
+  }
+  &-card__item-price {
+    @include heading-style(2.063rem);
+    font-weight: bold;
+    color: $primary-color;
+  }
+  &__button-wrapper {
+    position: relative;
+  }
+  &__button-link {
+    text-decoration: none;
+    position: relative;
+  }
+  &__button-border {
+    @include button-border;
+  }
+  &__button {
+    @include button-style;
+  }
+}
+/* discount banner */
+.discount {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
+  background-color: $secondary-font-color;
+  padding: 6rem;
+  height: 60rem;
+
+  &__content {
+    width: 40%;
+    padding: 1.25rem;
+  }
+  &__title {
+    @include heading-style(3.75rem);
+    margin-bottom: 1rem;
+  }
+  &__text {
+    color: $primary-font-color;
+    font-size: 1.13rem;
+    margin-bottom: 2rem;
+  }
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icon {
+    width: 3.125rem;
+  }
+  &__button-wrapper {
+    margin: 2rem 0;
+    position: relative;
+  }
+  &__button-link {
+    text-decoration: none;
+    position: relative;
+  }
+  &__button-border {
+    @include button-border;
+  }
+  &__button {
+    @include button-style;
+  }
+  &__image-container {
+    background-image: url("../assets/images/coldbrewbackground.png");
+    background-size: cover;
+    background-position: center;
+    width: 25rem;
+    height: 25rem;
+    padding: 1.25rem;
+    position: relative;
+
+    &:hover .discount__image {
+      animation: spin 2s linear infinite;
+    }
+  }
+  &__image-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    height: 25rem;
+    position: absolute;
+    top: -1.25rem;
+    right: 1.25rem;
+    border: 0.313rem solid $primary-color;
+    z-index: 1;
+  }
+  &__image {
+    position: relative;
+    padding: 1.25rem;
+    max-width: 100%;
+  }
+  &__banner {
+    background-color: $primary-font-color;
+    width: 100%;
+    text-align: center;
+    animation: color-change 2.5s ease-in-out infinite;
+  }
+  &__banner-text {
+    color: $secondary-font-color;
+    font-size: 2.813rem;
+    font-weight: 400;
+  }
+  &__code {
+    font-weight: bold;
+  }
+}
+/* footer */
+.footer {
+  background-color: $secondary-color;
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__coffee-bean {
+    width: 7.5rem;
+    opacity: 25%;
+    position: absolute;
+  }
+  &__coffee-bean--left {
+    position: relative;
+    right: 4.5rem;
+    bottom: 5rem;
+  }
+  &__coffee-bean--right {
+    position: relative;
+    left: 4.5rem;
+    top: 5rem;
+  }
+  &-card {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 1rem;
+    background-color: transparent;
+    z-index: 1;
+  }
+  &-card__title {
+    @include heading-style(2.063rem);
+    margin: 0;
+  }
+  &-card__details {
+    font-size: 1.125rem;
+  }
+  &-socials__link {
+    text-decoration: none;
+  }
+  &-socials__image {
+    width: 3.125rem;
+    margin-right: 0.75rem;
+  }
+}

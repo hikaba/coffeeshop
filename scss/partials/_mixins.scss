@@ -1,0 +1,48 @@
+@use './variables' as *;
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin button-style {
+    text-decoration: none;
+    padding: 1.25rem;
+    width: 11.25rem;
+    background-color: $primary-color;
+    color: $secondary-font-color;
+    border: none;
+    font-size: 1.313rem;
+    position: relative;
+}
+@mixin button-border {
+    width: 11.25rem;
+    height: 4rem;
+    position: absolute;
+    top: -1.7rem;
+    right: 0.3rem;
+    border: 0.125rem solid $primary-font-color;
+    z-index: 1;
+    &:active{
+        transform: translate(0.3rem, 0.3rem);
+    }
+}
+@mixin nav-style ($color){
+    font-size: 1.313rem;
+    text-decoration: none;
+    padding: 1rem;
+    color: $color;
+}
+@mixin heading-style ($size) {
+    font-size: $size;
+    font-weight: 300;
+    color: $primary-font-color;
+}
+@mixin menu-card-style ($color){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: $color;
+}

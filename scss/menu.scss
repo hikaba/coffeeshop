@@ -1,0 +1,85 @@
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+/* hero */
+.hero {
+  background-image: url("../assets/images/coffee-circle.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 35rem;
+  @include flex-center;
+
+  &__border {
+    width: 18.75rem;
+    height: 12.5rem;
+    border: 0.313rem solid $primary-color;
+    position: relative;
+    z-index: 2;
+    right: 1rem;
+    top: -1rem;
+  }
+  &__title-container {
+    position: absolute;
+    width: 18.75rem;
+    height: 12.5rem;
+    background-color: $primary-font-color;
+    @include flex-center;
+  }
+  &__title {
+    @include heading-style(3.75rem);
+    margin: 0;
+    background-color: $primary-font-color;
+    color: $secondary-font-color;
+  }
+}
+/* tabs for menu */
+.sub-nav {
+  background-color: $primary-font-color;
+  padding: 1.5rem;
+
+  &__list {
+    @include flex-center;
+    list-style-type: none;
+    margin: 0;
+  }
+  &__item {
+    border-left: 0.25rem solid $primary-color;
+  }
+  &__link {
+    @include nav-style($secondary-font-color);
+  }
+}
+
+/* menu cards */
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu-card {
+  @include menu-card-style($secondary-color);
+  &--modifier {
+    @include menu-card-style($color-modifier);
+  }
+  &__title {
+    @include heading-style(3.75rem);
+    margin: 1rem;
+  }
+  &__item {
+    @include heading-style(2.063rem);
+    margin: 0.5rem;
+  }
+  &__item-description {
+    margin: 0;
+    line-height: 1.6rem;
+    width: 35%;
+    font-size: 1.125rem;
+    font-style: italic;
+  }
+  &__item-price {
+    margin: 0.5rem;
+    font-size: 1.125rem;
+    color: $primary-color;
+  }
+}
